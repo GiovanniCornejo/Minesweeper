@@ -14,7 +14,7 @@ FetchContent_Declare(SFML
 FetchContent_MakeAvailable(SFML)
 
 # Create executable
-add_executable(Minesweeper src/minesweeper.cpp src/board.cpp src/tile.cpp src/random.cpp src/textures.cpp)
+add_executable(Minesweeper src/minesweeper.cpp src/board.cpp src/tile.cpp src/textures.cpp)
 
 # Add include files
 target_include_directories(Minesweeper PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
