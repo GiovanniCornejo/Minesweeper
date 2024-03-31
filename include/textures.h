@@ -14,7 +14,7 @@
 #define TILE_REVEALED_PNG IMAGES_PATH "tile_revealed.png"
 #define TILE_FLAG_PNG IMAGES_PATH "flag.png"
 #define TILE_MINE_PNG IMAGES_PATH "mine.png"
-#define TILE_NUMBER_PNG_PREFIX IMAGES_PATH "number_" // Add character number 1-8 and file type to this
+#define TILE_NUMBER_PNG_PREFIX IMAGES_PATH "number_" // Add character number 1-8.png to this
 
 #define FACE_PLAY_PNG IMAGES_PATH "face_happy.png"
 #define FACE_LOSE_PNG IMAGES_PATH "face_lose.png"
@@ -24,7 +24,7 @@
 #define TEST_PNG_PREFIX IMAGES_PATH "test_" // Add character number 1-3.png to this
 
 #define DIGITS_PNG IMAGES_PATH "digits.png"
-#define DIGIT_OFFSET 21 // Each digit in the digits.png file is offset by 21
+#define DIGITS_PNG_OFFSET 21 // Each digit in the digits.png file is offset by 21 pixels
 
 /// @brief Container for all sf::Texture objects.
 class Textures
