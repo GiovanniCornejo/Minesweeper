@@ -42,4 +42,4 @@ private:
 	/// @brief Load a texture into the texture map from an image file
 	static void loadTexture(const std::string &file);
 };
-#endif
+#endif // TEXTURES_H
