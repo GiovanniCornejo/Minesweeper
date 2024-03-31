@@ -24,7 +24,8 @@
 #define TEST_PNG_PREFIX IMAGES_PATH "test_" // Add character number 1-3.png to this
 
 #define DIGITS_PNG IMAGES_PATH "digits.png"
-#define DIGITS_PNG_OFFSET 21 // Each digit in the digits.png file is offset by 21 pixels
+#define DIGITS_PNG_OFFSET 21	// Each digit in the digits.png file is offset by 21 pixels
+#define DIGITS_NEGATIVE_SIGN 10 // Negative sign is in 10th position of digits.png file
 
 /// @brief Container for all sf::Texture objects.
 class Textures
