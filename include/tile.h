@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "textures.h"
+#include "window.h"
 
 /// @brief Represents a single tile in the Minesweeper board.
 class Tile
@@ -17,8 +18,8 @@ public:
     /* ------------------------------ Constructors ------------------------------ */
 
     /// @brief Construct a Tile object at row `x` and column `y` on the board. Default (0, 0)
-    /// @param x Row x
-    /// @param y Column y
+    /// @param x Row x.
+    /// @param y Column y.
     Tile(unsigned int x = 0, unsigned int y = 0);
 
     /* -------------------------------- Accessors ------------------------------- */
@@ -32,10 +33,15 @@ public:
     /// @return `true` if the tile is a mine; `false` otherwise.
     bool isMine() const;
 
+protected:
     /// @return The number of adjacent mines to the tile.
     unsigned int getAdjacentMineCount() const;
 
-    /* -------------------------------- Mutators -------------------------------- */
+    /// @return The tile sprite.
+    const sf::Sprite &getTileSprite() const;
+
+    /// @return The overlayed tile sprite (flagging and debug mine)
+    const sf::Sprite &getOverlaySprite() const;
 
     /// @brief Mark the tile as a mine.
     void setMine();
@@ -44,20 +50,11 @@ public:
     /// @param mines The number of adjacent mines.
     void setAdjacentMineCount(unsigned int mines);
 
-    /// @brief Mark the tile as revealed and update the sprites and window
-    /// @param window The SFML render window.
-    void revealTile(sf::RenderWindow &window);
+    /// @brief Mark the tile as revealed and update the tile sprite.
+    void revealTile();
 
-    /// @brief Mark the tile as flagged or not and update the sprites and window
-    /// @param flag Flagged if `true`, not flagged if `false`.
-    /// @param window The SFML render window.
-    void flagTile(bool flag, sf::RenderWindow &window);
-
-    /* --------------------------------- Display -------------------------------- */
-
-    /// @brief Update the tile in the window.
-    /// @param window The SFML render window.
-    void update(sf::RenderWindow &window);
+    /// @brief Mark the tile as flagged or not and update the tile sprite.
+    void toggleFlag();
 
 private:
     bool revealed; // Tile is revealed

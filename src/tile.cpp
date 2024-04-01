@@ -20,6 +20,8 @@ bool Tile::isRevealed() const { return revealed; }
 bool Tile::isFlagged() const { return flagged; }
 bool Tile::isMine() const { return mine; }
 unsigned int Tile::getAdjacentMineCount() const { return adjacentMineCount; }
+const sf::Sprite &Tile::getTileSprite() const { return tileSprite; }
+const sf::Sprite &Tile::getOverlaySprite() const { return overlaySprite; }
 
 /* -------------------------------- Mutators -------------------------------- */
 
@@ -27,7 +29,7 @@ void Tile::setMine() { mine = true; }
 
 void Tile::setAdjacentMineCount(unsigned int mines) { adjacentMineCount = mines; }
 
-void Tile::revealTile(sf::RenderWindow &window)
+void Tile::revealTile()
 {
     revealed = true;
     tileSprite.setTexture(*Textures::getTexture(TILE_REVEALED_PNG));
@@ -38,26 +40,14 @@ void Tile::revealTile(sf::RenderWindow &window)
         overlaySprite.setTexture(*Textures::getTexture(TILE_REVEALED_PNG));
     else
         overlaySprite.setTexture(*Textures::getTexture(TILE_NUMBER_PNG_PREFIX + std::to_string(adjacentMineCount) + ".png"));
-
-    update(window);
 }
 
-void Tile::flagTile(bool flag, sf::RenderWindow &window)
+void Tile::toggleFlag()
 {
-    flagged = flag;
+    flagged = !flagged;
 
     if (flagged)
         overlaySprite.setTexture(*Textures::getTexture(TILE_FLAG_PNG));
     else
         overlaySprite.setTexture(*Textures::getTexture(TILE_HIDDEN_PNG));
-
-    update(window);
-}
-
-/* --------------------------------- Display -------------------------------- */
-
-void Tile::update(sf::RenderWindow &window)
-{
-    window.draw(tileSprite);
-    window.draw(overlaySprite);
 }
