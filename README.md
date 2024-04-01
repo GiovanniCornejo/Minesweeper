@@ -1,5 +1,7 @@
 # Minesweeper
 
+![Game Demo](demo/Minesweeper.gif)
+
 ## Description
 
 A recreation of the classic Minesweeper game implemented using SFML version 2.5.
