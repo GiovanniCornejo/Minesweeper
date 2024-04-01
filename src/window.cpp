@@ -7,5 +7,4 @@ void Window::initializeWindow()
     window.create(sf::VideoMode(800u, 600u), "Minesweeper", sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
     window.setKeyRepeatEnabled(false);
-    window.clear(sf::Color::White);
 }
