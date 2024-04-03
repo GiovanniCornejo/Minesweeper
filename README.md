@@ -8,7 +8,7 @@ A recreation of the classic Minesweeper game implemented using SFML version 2.5.
 
 ## Dependencies
 
-- CMake
+- CMake (minimum version 3.22)
 
 Note: On Linux, you may also need to install the following dependencies for SFML to work properly:
 
@@ -39,15 +39,9 @@ Note: On Linux, you may also need to install the following dependencies for SFML
    Note: The build process will automatically download and include SFML, so you don't need to install it separately.
 
 4. Run the executable:
-
-- On Windows:
-  ```bash
-  ./Minesweeper.exe
-  ```
-- On Linux:
-  ```bash
-  ./Minesweeper
-  ```
+   ```bash
+   ./Minesweeper.exe
+   ```
 
 ## Rules Overview
 
